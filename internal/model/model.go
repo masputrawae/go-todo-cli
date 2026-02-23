@@ -1,6 +1,8 @@
 package model
 
-import "time"
+import (
+	"database/sql"
+)
 
 type Todo struct {
 	ID       int
@@ -8,7 +10,7 @@ type Todo struct {
 	Priority string
 	Category string
 	Task     string
-	Lastmod  time.Time
+	Lastmod  sql.NullTime
 }
 
 type Meta struct {

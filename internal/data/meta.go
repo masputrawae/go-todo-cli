@@ -4,6 +4,14 @@ import (
 	"github.com/masputrawae/todo-cli/internal/model"
 )
 
+var Default = struct {
+	Status  string
+	Prioriy string
+}{
+	Status:  "Planning",
+	Prioriy: "Medium",
+}
+
 var Statuses = []model.Meta{
 	{Name: "Planning", Emoji: "📝"},
 	{Name: "Active", Emoji: "🔥"},
