@@ -1,4 +1,4 @@
-module github.com/masputrawae/todo-cli
+module github.com/masputrawae/go-todo-cli
 
 go 1.25.5
 
