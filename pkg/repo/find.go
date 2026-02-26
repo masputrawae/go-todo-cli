@@ -4,30 +4,38 @@ import "github.com/masputrawae/go-todo-cli/pkg/model"
 
 func (r *Repo) Find(i *model.TodoFindType) []model.Todo {
 	var (
-		results = make([]model.Todo, len(r.Todos))
+		results []model.Todo
 		todo    model.Todo
 	)
 
 	isFilter := false
 	for index := range r.Todos {
 		if i.ID != nil {
-			todo = r.Todos[index]
-			isFilter = true
+			if r.Todos[index].ID == *i.ID {
+				todo = r.Todos[index]
+				isFilter = true
+			}
 		}
 
 		if i.Status != nil {
-			todo = r.Todos[index]
-			isFilter = true
+			if r.Todos[index].Status == *i.Status {
+				todo = r.Todos[index]
+				isFilter = true
+			}
 		}
 
 		if i.Priority != nil {
-			todo = r.Todos[index]
-			isFilter = true
+			if r.Todos[index].Priority == *i.Priority {
+				todo = r.Todos[index]
+				isFilter = true
+			}
 		}
 
 		if i.Category != nil {
-			todo = r.Todos[index]
-			isFilter = true
+			if r.Todos[index].Category == i.Category {
+				todo = r.Todos[index]
+				isFilter = true
+			}
 		}
 	}
 

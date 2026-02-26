@@ -20,8 +20,9 @@
   },
   {
     "id": 3,
-    "status": "planning",
-    "priority": "low",
-    "task": "Coba dengan prioritas"
+    "status": "active",
+    "priority": "highest",
+    "task": "memancing dan berburu domba",
+    "category": "berlomba"
   }
 ]
