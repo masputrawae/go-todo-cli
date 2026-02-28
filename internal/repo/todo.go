@@ -20,6 +20,7 @@ type TodoRepo struct {
 }
 
 type TodoManage interface {
+	Load() error
 	Add(u model.TodoAddInput) error
 	Edit(u model.TodoEditInput) error
 	Delete(id int) error
@@ -30,8 +31,17 @@ type TodoManage interface {
 	FindByProject(project string) ([]model.Todo, error)
 }
 
-func NewTodoRepo(data []model.Todo) TodoManage {
-	return &TodoRepo{Data: data}
+func NewTodoRepo(data []model.Todo, fp string) TodoManage {
+	return &TodoRepo{Data: data, FilePath: fp}
+}
+
+func (tr *TodoRepo) Load() error {
+	data, err := utils.LoadTodo(tr.FilePath)
+	if err != nil {
+		return err
+	}
+	tr.Data = data
+	return nil
 }
 
 // add new todo
