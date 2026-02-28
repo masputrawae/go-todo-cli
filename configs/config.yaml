@@ -1,0 +1,39 @@
+priorities:
+  - id: highest
+    short: A
+    name: Highest
+    color: isi-nanti
+  - id: high
+    short: B
+    name: High
+    color: isi-nanti
+  - id: medium
+    short: C
+    name: Medium
+    color: isi-nanti
+  - id: low
+    short: D
+    name: Low
+    color: isi-nanti
+  - id: lowest
+    short: E
+    name: Lowest
+    color: isi-nanti
+
+statuses:
+  - id: active
+    name: Active
+    emoji: 🔵
+  - id: in-progress
+    name: In Progress
+    emoji: 🟢
+  - id: done
+    name: Done
+    emoji: ⚫
+  - id: cancelled
+    name: Cancelled
+    emoji: 🔴
+  - id: archive
+    name: Archive
+    emoji: 🟣
+
